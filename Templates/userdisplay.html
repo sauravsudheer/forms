@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration and Display User</title>
+</head>
+<body>
+    <h1>Enter Registration Number</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if user_profile %}
+        <h2>User Details</h2>
+        <p>Name: {{ user_profile.name }}</p>
+        <p>Registration Number: {{ user_profile.registration_number }}</p>
+        <p>Father's Name: {{ user_profile.fathername }}</p>
+        <p>Mother's Name: {{ user_profile.mothername }}</p>
+        <p>Email: {{ user_profile.email }}</p>
+        <p>Phone: {{ user_profile.phone }}</p>
+        <p>Center: {{ user_profile.center.centername }}</p>
+        <p>Medium: {{ user_profile.get_medium_display }}</p>
+        <form method="get" action="{% url 'generate_pdf' user_profile.registration_number %}">
+            <button type="submit">Generate PDF</button>
+        </form>
+    {% endif %}
+
+    {% if error_message %}
+        <p>{{ error_message }}</p>
+    {% endif %}
+</body>
+</html>
+

@@ -1,0 +1,35 @@
+<!-- pdf_template.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Details PDF</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 100%;
+            padding: 20px;
+        }
+        .details {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>User Details</h1>
+        <div class="details">
+            <p><strong>Name:</strong> {{ user_profile.name }}</p>
+            <p><strong>Registration Number:</strong> {{ user_profile.registration_number }}</p>
+            <p><strong>Father's Name:</strong> {{ user_profile.fathername }}</p>
+            <p><strong>Mother's Name:</strong> {{ user_profile.mothername }}</p>
+            <p><strong>Email:</strong> {{ user_profile.email }}</p>
+            <p><strong>Phone:</strong> {{ user_profile.phone }}</p>
+            <p><strong>Center:</strong> {{ user_profile.center.centername }}</p>
+            <p><strong>Medium:</strong> {{ user_profile.get_medium_display }}</p>
+        </div>
+    </div>
+</body>
+</html>

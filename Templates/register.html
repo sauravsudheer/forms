@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+            <!-- <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br>
+             <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname"> -->
+            
+        
+        <!-- {%for x in Center%}
+            <P> {{x.centername}}
+        {% endfor %}  -->
+        <!-- <h2>Select Center</h2>
+        <select>
+            {% for c in Center %}
+            <option value="{{ c.centername }}">{{ c.centername }}</option>
+            {% endfor %}
+        </select>    --> 
+        <button type="submit">Register</button>
+    </form>
+    
+</body>
+</html>
